@@ -1,0 +1,74 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5; /* Facebook's background gray */
+}
+
+.container {
+    text-align: left;
+    background-color: #ffffff; /* Clean white background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow like Facebook */
+}
+
+.timer {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.controls button {
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #1b74e4; /* Facebook blue */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+#reset {
+    background-color: #606770; /* Neutral gray */
+}
+
+.controls button:hover {
+    background-color: #1662c1; /* Darker Facebook blue */
+    transform: none; /* Removed the transform effect for cleaner look */
+}
+
+.mode {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #1c1e21; /* Facebook dark gray text */
+}
+
+#toggle {
+    background-color: #42b72a; /* Facebook green */
+}
+
+#toggle:hover {
+    background-color: #36a420; /* Darker green */
+}
+
+#toggle.work-mode {
+    background-color: #1b74e4; /* Facebook blue */
+}
+
+#toggle.break-mode {
+    background-color: #42b72a; /* Facebook green */
+}
+
+#toggle.work-mode:hover {
+    background-color: #1662c1;
+}
+
+#toggle.break-mode:hover {
+    background-color: #36a420;
+} 
