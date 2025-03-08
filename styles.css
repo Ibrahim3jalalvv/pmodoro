@@ -71,4 +71,44 @@ body {
 
 #toggle.break-mode:hover {
     background-color: #36a420;
+}
+
+.task-input {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#task-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 250px;
+}
+
+#task-submit {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#task-submit:hover {
+    background-color: #45a049;
+}
+
+.current-task {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+#task-text {
+    font-weight: bold;
 } 

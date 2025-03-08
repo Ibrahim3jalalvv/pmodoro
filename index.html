@@ -9,13 +9,21 @@
 <body>
     <div class="container">
         <h1>Pomodoro Timer</h1>
+        <div class="current-task" id="task-display" style="display: none;">
+            Current Task: <span id="task-text"></span>
+        </div>
+        <div class="task-input" id="task-dialog">
+            <input type="text" id="task-input" placeholder="What are you working on?">
+            <button id="task-submit">Set Task</button>
+        </div>
         <div class="timer">
             <span id="minutes">25</span>:<span id="seconds">00</span>
         </div>
         <div class="controls">
             <button id="start">Start</button>
             <button id="pause">Pause</button>
-            <button id="reset">Reset</button>
+            <input type="checkbox" id="reset" name="reset">
+            <label for="reset">Reset</label>
             <button id="toggle">Toggle Mode</button>
             <!-- <button class="reset">Reset</button> -->
         </div>

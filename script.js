@@ -9,6 +9,10 @@ const pauseButton = document.getElementById('pause');
 const resetButton = document.getElementById('reset');
 const modeText = document.getElementById('mode-text');
 const toggleButton = document.getElementById('toggle');
+const taskInput = document.getElementById('task-input');
+const taskSubmit = document.getElementById('task-submit');
+const taskDisplay = document.getElementById('task-display');
+const taskText = document.getElementById('task-text');
 
 function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);
@@ -54,6 +58,11 @@ function resetTimer() {
     modeText.textContent = 'Work Time';
     updateDisplay();
     updateToggleButtonText();
+    
+    // Reset task
+    taskInput.value = '';
+    taskDisplay.style.display = 'none';
+    document.getElementById('task-dialog').style.display = 'block';
 }
 
 function updateToggleButtonText() {
@@ -73,11 +82,36 @@ function toggleMode() {
     updateToggleButtonText();
 }
 
+function handleTaskSubmit() {
+    const task = taskInput.value.trim();
+    if (task) {
+        taskText.textContent = task;
+        taskDisplay.style.display = 'block';
+        document.getElementById('task-dialog').style.display = 'none';
+        startTimer(); // Assuming you have a startTimer function
+    }
+}
+
 // Add event listeners
-startButton.addEventListener('click', startTimer);
+startButton.addEventListener('click', () => {
+    if (!taskDisplay.style.display || taskDisplay.style.display === 'none') {
+        // If no task is set, show the task input
+        document.getElementById('task-dialog').style.display = 'block';
+        taskInput.focus();
+    } else {
+        // If task is already set, start the timer directly
+        startTimer();
+    }
+});
 pauseButton.addEventListener('click', pauseTimer);
 resetButton.addEventListener('click', resetTimer);
 toggleButton.addEventListener('click', toggleMode);
+taskSubmit.addEventListener('click', handleTaskSubmit);
+taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleTaskSubmit();
+    }
+});
 
 // Initial display update
 updateDisplay();
